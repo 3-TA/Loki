@@ -1,2 +1,2 @@
 #!/bin/bash
-say 'hi'
+say hi
