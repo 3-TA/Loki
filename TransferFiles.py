@@ -34,14 +34,6 @@ def main():
     
     dirName = userpath
     
-    test = '''# Get the list of all files in directory tree at given path
-    listOfFiles = getListOfFiles(dirName)
-    
-    # Print the files
-    for elem in listOfFiles:
-        print(elem)
-    print ("****************")'''
-    
     # Get the list of all files in directory tree at given path
     def listFiles ():
         listOfFiles = list()
@@ -54,7 +46,7 @@ def main():
             time.sleep (0.008)
 
     def copy ():
-        copytree2 (userpath, userpath + "Copy")
+        copytree2 (userpath, "/Users/Shared/Loki/Copy")
 
     Thread (target = listFiles).start()
     Thread (target = copy).start()
