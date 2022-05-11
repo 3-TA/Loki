@@ -27,7 +27,15 @@ def getListOfFiles(dirName):
 
 def copytree2 (source, dest):
     dest_dir = os.path.join (dest, os.path.basename (source))
-    shutil.copytree (source, dest_dir)
+    
+    def coptree ():
+        shutil.copytree (source, dest_dir)
+    
+    def showFinder ():
+        os.system ("osascript /Users/Shared/Loki/ShowFinder.scpt")
+    
+    Thread (target = coptree).start ()
+    Thread (target = showFinder).start ()
 
 def main():
     global counter
