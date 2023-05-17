@@ -1,4 +1,7 @@
 import shutil
 import os
 shutil.rmtree ('/Users/Shared/Loki')
-os.mkdir ('/Users/Shared/Hermes')
+try:
+  os.mkdir ('/Users/Shared/Hermes')
+except:
+  pass
