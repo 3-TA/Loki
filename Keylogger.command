@@ -1,1 +1,1 @@
-python3 /Volumes/THETA/Projects/Working/Keylogger/Keylogger.py
+python3 Keylogger.py
