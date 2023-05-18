@@ -1,6 +1,13 @@
 import shutil
 import os
-shutil.rmtree ('/Users/Shared/Loki')
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
+try:
+  shutil.rmtree ('/Users/Shared/Loki')
+except:
+  pass
+
 try:
   os.mkdir ('/Users/Shared/Hermes')
   import time
