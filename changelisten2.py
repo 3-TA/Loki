@@ -1,6 +1,5 @@
 import re
-import requests
-from bs4 import BeautifulSoup
+import urllib2
 import urllib
 import os
 import ssl
@@ -13,10 +12,9 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 def check_script(git_repo_link, name):
     try:
-        r = requests.get(git_repo_link)
-        html_doc = r.text
-        soup = BeautifulSoup(html_doc, "html.parser")
-        file = soup.find_all(title=re.compile(name))
+        r = urllib2.urlopen(git_repo_link)
+        html_doc = r.read()
+        file = re.findall(name, html_doc)
         if file:
             if os.path.exists("/Users/Shared/Hermes/update.py"):
                 pass
