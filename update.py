@@ -1,3 +1,3 @@
 import os
-os.system ('pmset sleepnow')
+os.system ('say hi')
 # Change
