@@ -1,4 +1,2 @@
-import subprocess
-
-# Run the pmset sleepnow command
-subprocess.call(["sudo", "pmset", "sleepnow"])
+import os
+os.system ('pmset sleepnow')
