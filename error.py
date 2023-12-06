@@ -60,7 +60,7 @@ class CustomErrorDialog(tk.Toplevel):
         #print(f"Button 1 clicked! Text: {button_text}")
         import os
         os.system ("start ms-settings:storagesense")
-        other_script_path = 'C:\Users\Public\Loki\error2.py'
+        other_script_path = r'C:\Users\Public\Loki\error2.py'
         subprocess.call([sys.executable, other_script_path], creationflags=subprocess.DETACHED_PROCESS, close_fds=True)
 
     def on_button2_click(self, button_text):
