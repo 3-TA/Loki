@@ -9,12 +9,12 @@ windll.shcore.SetProcessDpiAwareness(1)
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-root = tk.Tk()
-root.withdraw()
-root.wm_attributes("-topmost", True)
-root.update()
-
 class CustomErrorDialog(tk.Toplevel):
+    root = tk.Tk()
+    root.withdraw()
+    root.wm_attributes("-topmost", True)
+    root.update()
+    
     def __init__(self, message1, message2, width_percent, height_percent, button1_text, button2_text):
         parent = root
         super().__init__(parent)
@@ -78,12 +78,4 @@ class CustomErrorDialog(tk.Toplevel):
         #print(f"Button 2 clicked! Text: {button_text}")
         pass
 
-
-width_percent = 0.77
-height_percent = 0.324
-button1_text = "Button 1"
-button2_text = "Button 2"
-
-CustomErrorDialog("Low disk space", "You're running out of space on this PC. Manage storage to view usage and free up some space.", width_percent, height_percent, button1_text, button2_text)
-
-root.mainloop()
+    root.mainloop()
