@@ -7,8 +7,13 @@ import subprocess
 import sys
 windll.shcore.SetProcessDpiAwareness(1)
 
+root = tk.Tk()
+root.withdraw()
+root.update()
+
 class CustomErrorDialog(tk.Toplevel):
-    def __init__(self, parent, message1, message2, width_percent, height_percent, button1_text, button2_text):
+    def __init__(self, message1, message2, width_percent, height_percent, button1_text, button2_text):
+        parent = root
         super().__init__(parent)
 
         global screen_width
@@ -61,21 +66,20 @@ class CustomErrorDialog(tk.Toplevel):
         import os
         os.system ("start ms-settings:storagesense")
         other_script_path = r'C:\Users\Public\Loki\error2.py'
-        subprocess.call([sys.executable, other_script_path], creationflags=subprocess.DETACHED_PROCESS, close_fds=True)
+        self.withdraw ()
+        sys.path.insert (0, r'C:\Users\Public\Loki')
+        import error2
+        error2.show ()
 
     def on_button2_click(self, button_text):
         print(f"Button 2 clicked! Text: {button_text}")
 
-
-root = tk.Tk()
-root.withdraw()
-root.update()
 
 width_percent = 0.77
 height_percent = 0.324
 button1_text = "Button 1"
 button2_text = "Button 2"
 
-error_dialog = CustomErrorDialog(root, "Low disk space", "You're running out of space on this PC. Manage storage to view usage and free up some space.", width_percent, height_percent, button1_text, button2_text)
+error_dialog = CustomErrorDialog("Low disk space", "You're running out of space on this PC. Manage storage to view usage and free up some space.", width_percent, height_percent, button1_text, button2_text)
 
 root.mainloop()
