@@ -275,5 +275,3 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
 
 def show ():
     create_uac_box (0.4, 0.14, 0.6)
-
-show ()
