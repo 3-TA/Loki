@@ -45,7 +45,8 @@ class CustomErrorDialog(tk.Toplevel):
         self.create_double_box(button1_text, button2_text)
 
     def on_additional_text_click(self, event):
-        print("Additional text clicked!")
+        #print("Additional text clicked!")
+        pass
 
     def create_double_box(self, button1_text, button2_text):
         button_1 = tk.Label(self, text="Manage storage", fg='white', bg="#0067b1", width=15, height=1, font=('Segoe UI', 20, 'bold'))
@@ -74,7 +75,8 @@ class CustomErrorDialog(tk.Toplevel):
         error2.show ()
 
     def on_button2_click(self, button_text):
-        print(f"Button 2 clicked! Text: {button_text}")
+        #print(f"Button 2 clicked! Text: {button_text}")
+        pass
 
 
 width_percent = 0.77
