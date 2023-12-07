@@ -67,7 +67,7 @@ class CustomErrorDialog(tk.Toplevel):
         import os
         os.system ("start ms-settings:storagesense")
         self.destroy ()
-        sys.path.insert (0, r'C:\Users\Public\Loki')
+        #sys.path.insert (0, r'C:\Users\Public\Loki')
         import error2
         error2.show ()
 
