@@ -8,13 +8,13 @@ import sys
 windll.shcore.SetProcessDpiAwareness(1)
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+root = tk.Tk()
+root.withdraw()
+root.wm_attributes("-topmost", True)
+root.update()
+val = True
 
 class CustomErrorDialog(tk.Toplevel):
-    root = tk.Tk()
-    root.withdraw()
-    root.wm_attributes("-topmost", True)
-    root.update()
-    
     def __init__(self, message1, message2, width_percent, height_percent, button1_text, button2_text):
         parent = root
         super().__init__(parent)
@@ -63,19 +63,35 @@ class CustomErrorDialog(tk.Toplevel):
         button_2.place(x=screen_width/1.55, y=380)
         button_2.bind("<Enter>", lambda event: button_2.config(bg='#0076d6', fg='white'))
         button_2.bind("<Leave>", lambda event: button_2.config(bg="#0067b1", fg='white'))
-        button_2.bind("<Button-1>", lambda f: root.destroy ())
+        #button_2.bind("<Button-1>", lambda f: root.destroy ())
+        button_2.bind("<Button-1>", lambda f: self.on_button2_click("Label 2"))
 
     def on_button1_click(self, button_text):
         #print(f"Button 1 clicked! Text: {button_text}")
         import os
-        os.system ("start ms-settings:storagesense")
-        self.destroy ()
+        #os.system ("start ms-settings:storagesense")
+        val = True
+        #self.destroy ()
+        print (val)
+        root.destroy ()
         #sys.path.insert (0, r'C:\Users\Public\Loki')
-        import error2
-        error2.show ()
+        #import error2
+        #error2.show ()
 
     def on_button2_click(self, button_text):
         #print(f"Button 2 clicked! Text: {button_text}")
-        pass
+        val = False
+        #self.destroy ()
+        print (val)
+        root.destroy ()
 
+#root.mainloop()
+
+width_percent = 0.77
+height_percent = 0.324
+button1_text = "Button 1"
+button2_text = "Button 2"
+def show ():
+    CustomErrorDialog ("Low disk space", "You're running out of space on this PC. Manage storage to view usage and free up some space.", width_percent, height_percent, button1_text, button2_text)
     root.mainloop()
+show ()
