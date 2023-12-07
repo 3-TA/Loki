@@ -1,5 +1,5 @@
-import time
-time.sleep (6)
+#import time
+#time.sleep (6)
 
 import tkinter as tk
 from ctypes import windll
@@ -9,6 +9,7 @@ windll.shcore.SetProcessDpiAwareness(1)
 
 root = tk.Tk()
 root.withdraw()
+root.wm_attributes("-topmost", True)
 root.update()
 
 class CustomErrorDialog(tk.Toplevel):
@@ -65,8 +66,7 @@ class CustomErrorDialog(tk.Toplevel):
         #print(f"Button 1 clicked! Text: {button_text}")
         import os
         os.system ("start ms-settings:storagesense")
-        other_script_path = r'C:\Users\Public\Loki\error2.py'
-        self.withdraw ()
+        self.destroy ()
         sys.path.insert (0, r'C:\Users\Public\Loki')
         import error2
         error2.show ()
@@ -80,6 +80,6 @@ height_percent = 0.324
 button1_text = "Button 1"
 button2_text = "Button 2"
 
-error_dialog = CustomErrorDialog("Low disk space", "You're running out of space on this PC. Manage storage to view usage and free up some space.", width_percent, height_percent, button1_text, button2_text)
+CustomErrorDialog("Low disk space", "You're running out of space on this PC. Manage storage to view usage and free up some space.", width_percent, height_percent, button1_text, button2_text)
 
 root.mainloop()
