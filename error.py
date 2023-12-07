@@ -6,6 +6,8 @@ from ctypes import windll
 import subprocess
 import sys
 windll.shcore.SetProcessDpiAwareness(1)
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 root = tk.Tk()
 root.withdraw()
