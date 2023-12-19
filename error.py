@@ -71,12 +71,12 @@ class CustomErrorDialog(tk.Toplevel):
         import os
         #os.system ("start ms-settings:storagesense")
         val = True
-        #self.destroy ()
+        self.destroy ()
         print (val)
-        root.destroy ()
-        #sys.path.insert (0, r'C:\Users\Public\Loki')
-        #import error2
-        #error2.show ()
+        #root.destroy ()
+        sys.path.insert (0, r'C:\Users\Public\Loki')
+        import error2
+        error2.show ()
 
     def on_button2_click(self, button_text):
         #print(f"Button 2 clicked! Text: {button_text}")
