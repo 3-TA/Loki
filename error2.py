@@ -158,8 +158,8 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
 
     # Create the main window
     global root, bottom_frame, top_frame
-    #root = Toplevel()
-    root = Tk ()
+    root = Toplevel()
+    #root = Tk ()
 
     global screen_width, screen_height
     screen_width = root.winfo_screenwidth()
