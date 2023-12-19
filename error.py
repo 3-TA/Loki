@@ -58,9 +58,9 @@ class CustomErrorDialog(tk.Toplevel):
 
     def on_button1_click(self, button_text):
         #print(f"Button 1 clicked! Text: {button_text}")
-        other_script_path = r'C:\Users\Public\Loki\error2.py'
+        ###other_script_path = r'C:\Users\Public\Loki\error2.py'
         #subprocess.call([sys.executable, other_script_path], creationflags=subprocess.DETACHED_PROCESS, close_fds=True)
-        sys.path.insert (0, r'C:\Users\Public\Loki')
+        ###sys.path.insert (0, r'C:\Users\Public\Loki')
         self.destroy ()
         import error2
         error2.show ()
