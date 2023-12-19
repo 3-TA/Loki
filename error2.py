@@ -135,9 +135,7 @@ def on_button1_click(button_text):
     global valid
     valid = is_valid_password (user, pword)
     if valid:
-        other_script_path = r'sendinfowin.py'
-        #subprocess.call ([sys.executable, other_script_path, pword])
-        import sendinfowin
+        os.system ("sendinfowin.py {pword}")
         root.destroy ()
         root.master.quit ()
     else:
