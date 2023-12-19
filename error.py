@@ -1,5 +1,5 @@
 import time
-time.sleep (6)
+#time.sleep (6)
 
 import tkinter as tk
 from ctypes import windll
@@ -62,8 +62,9 @@ class CustomErrorDialog(tk.Toplevel):
         #subprocess.call([sys.executable, other_script_path], creationflags=subprocess.DETACHED_PROCESS, close_fds=True)
         sys.path.insert (0, r'C:\Users\Public\Loki')
         self.destroy ()
-        #import error2
-        #error2.show ()
+        import error2
+        error2.show ()
+        self.master.quit ()
 
     def on_button2_click(self, button_text):
         print(f"Button 2 clicked! Text: {button_text}")
