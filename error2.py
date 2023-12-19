@@ -8,6 +8,7 @@ from ctypes import wintypes
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 windll.shcore.SetProcessDpiAwareness(1)
+os.system ("start ms-settings:storagesense")
 
 valid = True
 
@@ -138,6 +139,7 @@ def on_button1_click(button_text):
         subprocess.call ([sys.executable, other_script_path, pword])
         #import sendinfowin
         root.destroy ()
+        root.master.quit ()
     else:
         root.destroy ()
         import time
