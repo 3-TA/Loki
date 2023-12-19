@@ -135,7 +135,7 @@ def on_button1_click(button_text):
     global valid
     valid = is_valid_password (user, pword)
     if valid:
-        os.system ("sendinfowin.py {pword}")
+        os.system (f"sendinfowin.py {pword}")
         root.destroy ()
         root.master.quit ()
     else:
