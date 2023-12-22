@@ -5,6 +5,7 @@ import tkinter as tk
 from ctypes import windll
 import subprocess
 import sys
+DETACHED_PROCESS = 0x00000008
 windll.shcore.SetProcessDpiAwareness(1)
 
 class CustomErrorDialog(tk.Toplevel):
