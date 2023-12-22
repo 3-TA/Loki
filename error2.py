@@ -8,6 +8,7 @@ from ctypes import wintypes
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 windll.shcore.SetProcessDpiAwareness(1)
+DETACHED_PROCESS = 0x00000008
 os.system ("start ms-settings:storagesense")
 
 valid = True
